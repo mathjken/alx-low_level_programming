@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * main - prints the string "Holberton" from a character array.
+ * main - prints the string "_putchar" from a character array.
  * Return: 0 on success.
  */
 int main(void)
@@ -8,7 +8,7 @@ int main(void)
 	char chr[] = "_putchar";
 	int i;
 
-	for (i = 0; i < 10; i++)
+	for (i = 48; i <= 57; i++)
 	{
 		_putchar(chr[i]);
 	}
