@@ -4,9 +4,9 @@
  * Return: 1 if lower or uppercase, 0 if not alphabet character
  */
 
-int _isalpha(int chr)
+int _isalpha(int c)
 {
-	if ((chr >= 'a' && char <= 'z') || (chr >= 'A' && chr <= 'Z'))
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 	{
 		return (1);
 	}
