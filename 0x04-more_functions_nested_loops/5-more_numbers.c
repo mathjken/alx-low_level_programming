@@ -1,18 +1,20 @@
 #include "main.h"
 
 /**
- * print_line - Draws a straight line using the character _.
- * @n: The number of _ characters to be printed.
+ * more_numbers - Prints the numbers 0-14 ten times.
  */
-void print_line(int n)
+void more_numbers(void)
 {
-	int len;
+	int num, count;
 
-	if (n > 0)
+	for (count = 0; count <= 9; count++)
 	{
-		for (len = 0; len < n; len++)
-			_putchar('_');
+		for (num = 0; num <= 14; num++)
+		{
+			if (num > 9)
+				_putchar((num / 10) + '0');
+			_putchar((num % 10) + '0');
+		}
+		_putchar('\n');
 	}
-
-	_putchar('\n');
 }
