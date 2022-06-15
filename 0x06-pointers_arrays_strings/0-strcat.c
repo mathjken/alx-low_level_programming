@@ -1,17 +1,23 @@
 #include "main.h"
 
 /**
-  * string_length - finds the length of a string.
-  * Return: length of c.
-  * @pointer: pointer.
-  */
-int string_length(char *pointer)
-{
-	int c = 0;
+ * _strcat - concatenates two strings
+ * @dest: pointer to the destination string
+ * @src: pointer to the source string
+ * Return: pointer to the resulting string dest
+ */
 
-	while (*(pointer + c) != '\0')
+char *_strcat(char *dest, char *src)
+{
+	int i, j;
+
+	i = 0;
+	for (j = 0; dest[j] != '\0'; j++)
+		;
+	while (src[i] != '\0')
 	{
-		c++;
+		dest[j + i] = src[i];
+		i++;
 	}
-	return (c);
+	return (dest);
 }
