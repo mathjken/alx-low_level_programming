@@ -1,18 +1,17 @@
 #include "main.h"
-#include <stdio.h>
 
-char *_strcat(char *dest, char *src)
+/**
+  * string_length - finds the length of a string.
+  * Return: length of c.
+  * @pointer: pointer.
+  */
+int string_length(char *pointer)
 {
-        int i = 0;
-	int j = 0;
-	while (*(dest + i))
-	   i++;
-	while (*(src + j))
+	int c = 0;
+
+	while (*(pointer + c) != '\0')
 	{
-	   *(dest+i) = *(src+j);
-	   i++;
-	   j++;
+		c++;
 	}
-	*(dest+i) = '\0';
-	return (dest);
+	return (c);
 }
