@@ -1,19 +1,25 @@
 #include "main.h"
 
 /**
- * find_root - find square root of n, starting from the smallest possible, 0
- * @n: n
- * @root: test this root
- * Return: natural square root, or -1 if not natural root
+ * checker - checks the input number from n to the base
+ * @n: number is squared and compared against base
+ * @base: base number to check
+ * Return: natural square root of number base
  */
-
-int find_root(int n, int root)
+int checker(int n, int base)
 {
-	if (root * root > n)
+	if (n * n == base)
+		return (n);
+	if (n * n > base)
 		return (-1);
-
-	if (root * root == n)
-		return (root);
-
-	return (find_root(n, root + 1));
+	return (checker(n + 1, base));
+}
+/**
+ * _sqrt_recursion - return the natural square root of a number n.
+ * @n: number to check for square roots.
+ * Return: the natural square root of number n
+ */
+int _sqrt_recursion(int n)
+{
+	return (checker(1, n));
 }
