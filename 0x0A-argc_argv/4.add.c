@@ -1,35 +1,47 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
- * main - Prints the addition of positive numbers,
- *        followed by a new line.
- * @argc: The number of arguments passed to the program.
- * @argv: An array of a command listed
- * Return: 0 for success
- */
-
+  * main - Prints the sum of args positive numbers
+  * @argc: argument count
+  * @argv: argument vector
+  *
+  * Return: Always zero
+  */
 int main(int argc, char *argv[])
 {
-	int result = 0, num, i, j, k;
+	int i;
+	unsigned int k, sum = 0;
+	char *e;
 
-	for (i = 1; i < argc; i++)
+	if (argc > 1)
 	{
-		for (j = 0; argv[i][j] != '\0'; j++)
+		for (i = 1; i < argc; i++)
 		{
-			if (argv[i][j] > '0' || argv[i][j] < '0')
+			e = argv[i];
+
+			for (k = 0; k < strlen(e); k++)
 			{
-				printf("%s\n", "Error");
-				return (1);
+				if (e[k] < 48 || e[k] > 57)
+				{
+					printf("Error\n");
+					return (1);
+				}
 			}
+
+			sum += atoi(e);
+			e++;
 		}
 
+		printf("%d\n", sum);
 	}
-	for (k = 1; k < argc; k++)
+	else
 	{
-		num = atoi(argv[k]);
-		result += num;
+		printf("0\n");
 	}
-	printf("%d\n", result);
+
 	return (0);
 }
+
