@@ -1,6 +1,11 @@
 #ifndef DOG_H
 #define DOG_H
 
+/*
+ * File: dog.h
+ * Desc: header file section.
+ */
+
 /**
  * struct dog - structure for dogs
  * @name: first member
