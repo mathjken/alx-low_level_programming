@@ -1,5 +1,5 @@
-#ifndef DOG_H
-#define DOG_H
+#ifndef _HEADER
+#define _HEADER_
 
 /**
  * struct dog - structure definition of a dog
