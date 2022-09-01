@@ -1,19 +1,30 @@
 #include "lists.h"
+
 /**
- *sum_dlistint - sums all element value of doubly link list
- *@head: double liked list
- *Return: int value of the sum
+ * get_dnodeint_at_index - returns the
+ * nth node of a dlistint_t linked list
+ *
+ * @head: head of the list
+ * @index: index of the nth node
+ * Return: nth node
  */
-int sum_dlistint(dlistint_t *head)
+dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 {
-	int total = 0;
+	unsigned int i = 0;
 
 	if (head == NULL)
-		return (total);
-	while (head)
+		return (NULL);
+
+	while (head->prev != NULL)
+		head = head->prev;
+
+	while (head != NULL)
 	{
-		total = total + head->n;
+		if (i == index)
+			break;
 		head = head->next;
+		i++;
 	}
-	return (total);
+
+	return (head);
 }
